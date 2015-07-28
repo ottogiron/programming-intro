@@ -12,95 +12,101 @@ html
     article
 
       section
-        h1 Introduction to programming
+        h1 Introduction to programming 03
+        h2 Functions
 
       section
-        h2 Computer Science
-        h3 Scientific and practical approach to computation and its application. 
-        ul 
-          li Problem
-          li Input 
-          li Ouput
-          li Algorithms
+        h2 Functions
+        h3 A JavaScript function is a block of code designed to perform a particular task.
+        h4 console.log('message')
 
       section
-        h2 Programming
-        h3 Computer Science is not programming.
-        
-      section
-        h2 Programming
-        h3 Programming is a tool for apliying Computer Science.
-        
-        
-      section 
-        h2 What does a Computer understand ?
-        
-      section 
-        h2 Binary 
-        h3 Is a number expressed in the binary numeral system, or base-2 numeral. 
-        
-      section 
-        h2 Decimal System
-        img(src="images/decimal-system1.png")
-        
-      section 
-        h2 Decimal System
-        img(src="images/decimal-system2.png")
-        
-      section
-        h2 Binary System
-        img(src="images/binary-system1.png")
-        
-      section
-        h2 Binary System
-        img(src="images/binary-system2.png")
-        
-      section
-        h2 Binary System
-        img(src="images/binary-system3.png")
-        
-        
-      section
-        h2 ASCII
-        img(src="images/ascii.png")
-        
-      section
-        img(src="images/multimedia.png")
-        
-      section
-        h2 Algorithms
-        iframe(width="560" height="315" src="https://www.youtube.com/embed/6hfOvs8pY1k" frameborder="0" allowfullscreen)
-        
-      section
-        h2 Scratch
-        img(src="images/scratch.png")
-        h3 Scratch is a free programming language and online community where you can create your own interactive stories, games, and animations.
-        
-      section
-        h2 Scratch Demo
-        a(href="https://scratch.mit.edu/projects/2016536/" _target="_blank")
-          img(src="images/scratch.png")
-        h3 https://scratch.mit.edu/projects/2016536/
-        
-      section
-        h2 Hello World!!!
+        h2 Defining a Function
+        h3 A function definition is just a regular variable definition where the value given to the variable happens to be a function.
         pre
           code.language-javascript.
-            #include&lt;stdio.h&gt;
-
-              main()
-              {
-                printf("Hello World");
-
-              }
-      
-      section
-        h2 Scratch Loop
-        img(src="images/scratch-loop.png")
+            var square = function(x) {
+              return x * x;
+            };
+            console.log(square(12));
         
       section
-        h2 Scratch IF Statement
-        img(src="images/scratch-if.png")
+        h2 Defining a function
+        h3 A function can have multiple parameters or no parameters at all.
+        pre
+          code.language-javascript.
+            var makeNoise = function() {
+              console.log("Pling!");
+            };
+
+      section
+        h2 Defining a function
+        h3 Some functions produce a value, some don't
+
+      section
+        h2 Parameters and scopes
+        h3 The parameters to a function behave like regular variables, but their initial values are given by the caller of the function
+        
+      
+      section 
+        h2 Scopes
+        h3 An important property of functions is that the variables created inside of them, including their parameters, are local to the function. 
+        pre
+          code.language-javascript.
+
+            var x = "outside";
+
+            var f1 = function() {
+              var x = "inside f1";
+            };
+            
+            f1();
+            
+            console.log(x);
+            // → outside
+
+            var f2 = function() {
+              x = "inside f2";
+            };
+            f2();
+            console.log(x);
+            // → inside f2
+        
+      
+      section
+        h2 Declaration notation
+        h3 There is a slightly shorter way to say “var square = function…”. 
+        pre
+          code.language-javascript.
+            function square(x) {
+              return x * x;
+            }
+      
+      section
+        h2 Declaration notation
+        h3 There is a slightly shorter way to say “var square = function…”. 
+        pre
+          code.language-javascript.
+            console.log("The future says:", future());
+
+            function future() {
+              return "We STILL have no flying cars.";
+            }
+          
+      section
+        h2 Recursion
+        h3 A function that calls itself is called **recursive**
+        pre
+          code.language-javascript.
+            function power(base, exponent) {
+            if (exponent == 0)
+              return 1;
+            else
+              return base * power(base, exponent - 1);
+            }
+
+            console.log(power(2, 3));
+            // → 8
       
       section
         h2 Responsive Slides
